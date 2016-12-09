@@ -1,0 +1,545 @@
+/* MAIN MAP */
+
+		#mapContainer {
+			width: 100%;
+			height: 100%;
+		}
+		
+		.gratLines{
+		  stroke:#FFF6E5;
+		}
+		
+		.gratBackground{
+		  fill:#E3CDA4;
+		  /* #7ECEFD; */
+		}
+
+		.bentities{
+			stroke: black;
+			fill:#3E454C;
+			opacity:0.6; 
+			stroke-width:0.5px;
+			cursor: default;
+		}
+		
+		.bentities:hover {
+			stroke: white;
+		}
+		
+		.water{
+			fill:blue;
+		}
+	
+/* LAYER CONTROL */
+		.layer-titles{
+			color:black;
+			padding:0;
+			font-size:12px;
+			margin-top:0px;
+			width:100px;
+			display:inline;
+		}
+
+/* ZOOM */
+		#zoom_control{
+			position: absolute;
+			top:10px;
+			left:10px;
+			background-color: none;
+			height:50px;
+			width:90px;
+		}
+		
+		#zoom-in{
+			position: absolute;
+			top:0px;
+			left:0px;
+			background: url("../img/plus.png") no-repeat;
+			width: 40px;
+			height:40px;
+		}
+		
+		#zoom-out{
+			position: absolute;
+			top:0px;
+			left:50px;
+			background: url("../img/minus.png") no-repeat;
+			width: 40px;
+			height:40px;
+			
+		}
+		
+		#zoom-in:hover{
+			background:url("../img/plus2.png") no-repeat;
+			-webkit-transition: all 500ms ease;
+			-moz-transition: all 500ms ease;
+			-ms-transition: all 500ms ease;
+			transition: all 500ms ease;
+			cursor: pointer;
+		}
+		
+		#zoom-out:hover{
+			background:url("../img/minus2.png") no-repeat;
+			-webkit-transition: all 500ms ease;
+			-moz-transition: all 500ms ease;
+			-ms-transition: all 500ms ease;
+			transition: all 500ms ease;
+			cursor: pointer;
+		}
+	
+
+/* INFOLABEL */
+
+		.infolabel{
+			position:absolute;
+			top:80px;  /* 40px at corner */
+			right:100px;
+			width:300px;
+			height:110px;
+			z-index:10000;
+			background-color:black;
+			color:white;
+			font-family: 'Dosis', sans-serif;
+			text-align: center;
+			pointer-events: none;
+		}
+		
+		.infolabel h4{
+			font-size:20px; important
+		}
+
+
+/* INFO PANEL (ON CLICK) */
+		
+		.infopanel-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 100000;
+			background: rgba(0,0,0,0.3);
+		}
+		
+		.infopanel{
+			position:absolute;
+			width: 40%;
+			min-width:350px;
+			margin-left:35%;
+			margin-right:25%;
+			margin-top:150px;
+			height:500px;
+			background-color: #222;
+			color:white;
+			font-family: 'Dosis', sans-serif;
+			text-align: center;
+			z-index:9999;
+			border-radius:10px;
+			background:url("../img/ant_bg.png");
+			background-size:   cover;                    
+    		background-repeat: no-repeat;
+   			background-position: center center;  
+		}
+		
+		.close-info{
+			opacity:1;
+			color:white;
+			background-color:none;
+			z-index:101;
+			position:absolute;
+			width:50px;
+			height:50px;
+			top:0;
+			right:5px;
+			padding:5px;
+			font-size:30px;
+		}
+		
+		.close-info:hover{
+			cursor:pointer;
+			color:gray;
+			-webkit-transition: all 1s ease;
+			-moz-transition: all 1s ease;
+			-ms-transition: all 1s ease;
+			transition: all 1s ease;
+		}
+		
+		.infopanel-content {
+			height: 100%;
+			overflow: auto;
+		}
+		
+		.infopanel-content ul{
+			margin-left:40%;
+		}
+		.infopanel-content li{
+			list-style: none;
+			text-align: left;
+		    font-style: italic;
+		}
+		
+		.infopanel-content li:hover{
+			cursor:pointer;
+			opacity:0.7;
+		}
+		
+		.infopanel-content h4{
+			text-align:center;
+			padding-top:5px;
+			padding-bottom:5px;
+			margin-bottom:20px;
+			text-transform: uppercase;
+		}
+		
+		.total{
+			font-size:16px;
+			text-transform: uppercase;
+		}
+		
+		.map-this-bentity-link{
+			font-family: Antenna,Helvetica,sans-serif;
+			text-align: center;
+			padding-top: 16px;
+			padding-bottom: 12px;
+			padding-left: 10px;
+			padding-right: 10px;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 1.5;
+			text-transform: uppercase;
+			height: 40px;
+			width: 200px;
+			background: #F05253;
+			color: white;
+			border: solid 1px black;
+			border-radius: 40px;
+			margin-bottom:10px;
+			margin-top:10px;
+			-webkit-transition: all 200ms ease;
+			-moz-transition: all 200ms ease;
+			-ms-transition: all 200ms ease;
+			transition: all 200ms ease;
+		}
+		
+		.bentity-link-wrapper{
+			margin-top:20px;
+		}
+		.species-list{
+			margin-top:20px;
+		}
+		
+		.species-list li{
+			margin-left:-20px;
+		}
+		
+		.loading{
+			margin-bottom:10px;
+			margin-top:20px;
+		}
+		
+		.record-list{
+			margin-top:20px;
+		}
+		
+		.record-list li{
+			margin-left:-80px;
+			font-style: normal;
+		}
+		
+		.record-list li:hover{
+			cursor:auto;
+			color:white;
+			opacity:1; important
+		}
+		
+		ul li span:first-of-type { 
+    		float: left;
+   			width: 90px;
+		}
+		
+		.gabi_acc{
+			margin-left:0px;
+			width:90px;
+			/* position:absolute; */
+		}
+		
+		.type_data{
+			margin-left:/* 14px; */ 10px;
+		}
+		
+		.short_citation{
+			margin-left:/* 14px; */ 10px;
+		}
+		
+		#data-availability{
+		  	position: absolute;
+		  	top: 40px;
+		  	right: 10px;
+ 		    font-family: Antenna,Helvetica,sans-serif;
+			  padding-top: 10px;
+			  padding-bottom: 12px;
+			  padding-left: 6px;
+			  padding-right: 6px;
+			  text-decoration: none;
+			  font-weight: bold;
+			  font-size: 12px;
+			  line-height: 1.5;
+			  text-transform: uppercase;
+			  height: 40px;
+			  width: 120px;
+			  background: none;
+			  color: #F05253;
+			  border: solid 1px #F05253;
+			  border-radius: 40px;
+			  margin-bottom: 10px;
+			  margin-top: 12px;
+			  -webkit-transition: all 200ms ease;
+			  -moz-transition: all 200ms ease;
+			  -ms-transition: all 200ms ease;
+			  transition: all 200ms ease;	
+		}
+
+/* LEGEND */
+
+
+	/* 
+#species-legend > .colorBox:nth-of-type(1){
+			color:red;
+	}
+ */
+ 
+	 .legendTooltip{
+ 		width:200px;
+ 		
+ 		/* background-color:white; */
+ 		color:black;
+ 		background: rgba(255,255,255,0.9);
+ 		position:absolute;
+ 		margin-left:60px;
+ 		margin-top:-40px;
+ 		z-index:9999999;
+ 		border-radius:5px;
+ 		padding-left:5px;
+ 		padding-right:5px;
+ 		text-align:center;
+ 		
+	 }
+	 
+
+	#species-legend{
+		position:absolute;
+		margin-top:20px;
+		margin-left:10px;
+		left:10;
+		top:100;
+		background-color:none;
+		width:200px;
+		height:200px;
+	}
+		
+	
+	.colorbox{
+		width:50px;
+		height:25px;
+		margin-top:4px;
+		border: 1px solid black;
+		display: inline-block;
+		margin-right: 20px;
+		vertical-align: middle;
+	}
+
+	.legendRow {
+		color: white;
+		vertical-align: middle;
+	}
+	
+	.legendRow:last-of-type{
+		margin-bottom:40px;
+	}
+	
+	
+	.categoryName{
+		color:white;
+		margin-top:11px;
+		margin-left:30px;
+		float:right;
+	}
+	
+	#diversity-subfamily-legend-title{
+		color:white;
+		font-family: 'Dosis', sans-serif;
+		text-align: center;
+		width:200px;
+		font-size:14px;
+		padding-top:4px;
+		margin-left:10px;
+		margin-top:20px;
+		position:absolute;
+	}
+	
+	#diversity-subfamily-legend{
+		position:absolute;
+		margin-top:50px;
+	}
+	
+	#diversity-genus-legend-title{
+		color:white;
+		font-family: 'Dosis', sans-serif;
+		text-align: center;
+		width:200px;
+		font-size:14px;
+		padding-top:10px;
+		margin-left:10px;
+		margin-top:4px;
+		position:absolute;
+	}
+	
+	#diversity-genus-legend{
+		position:absolute;
+		margin-top:50px;
+	}
+
+	#diversity-bentity-legend-title{
+		color:white;
+		font-family: 'Dosis', sans-serif;
+		text-align: center;
+		padding:10px;
+		font-size:14px;
+		margin-left:20px;
+		margin-top:20px;
+		position:absolute;
+	}
+	
+	#diversity-bentity-legend{
+		position:absolute;
+		margin-top:60px;
+	}
+	
+	
+
+/* media query */
+
+@media all and (max-width: 1300px) {
+	.infopanel{
+			position:absolute;
+			margin-top:100px;
+			height:400px;
+		}
+	.infopanel-content ul{
+		margin-left:35%;
+	}
+}
+
+@media all and (max-width: 1100px) and (min-width: 801px) {
+	.infopanel{
+			position:absolute;
+			margin-top:100px;
+			height:400px;
+		}
+	.infopanel-content ul{
+			margin-left:30%;
+	}
+	.infopanel-content{
+		font-size:12px;	
+
+	}
+}
+
+@media all and (max-width: 800px) and (min-width: 621px) {
+	.infopanel{
+			margin-left:20%;
+		}
+	.infopanel-content ul{
+		margin-left:30%;
+	}
+	
+	.infopanel-content{
+		font-size:12px;	
+
+	}
+
+}
+
+@media all and (max-width: 620px) and (min-width: 501px) {
+	.infopanel{
+			margin-left:20%;
+		}
+	.infopanel-content{
+		font-size:12px;	
+
+	}
+
+}
+
+
+
+@media all and (max-width: 500px) {
+	.infopanel-content ul{
+		margin-left:30%;
+	}
+	
+	.infopanel-content h4{
+		margin-top:20px;
+		padding:10px;
+	}
+	
+	.infopanel-content{
+		font-size:12px;	
+	}
+	
+	.infopanel{
+		margin-left:10%;
+	}
+	
+	.infolabel{
+		top:450px;
+		left:60px;
+	}
+	
+	#species-legend{
+		margin-left:160px;
+		margin-top:-380px; 
+		/* to be below selected species without covering too much of map */
+		
+	}
+	
+	#species-legend span{
+		text-shadow: 1px 2px 3px black; 
+	}
+	
+	#diversity-genus-legend{
+		display:none;
+	}
+	
+	#diversity-subfamily-legend{
+		display:none;
+	}
+	
+	#diversity-bentity-legend{
+		display:none;
+	}
+	
+	#diversity-subfamily-legend-title{
+		display:none;
+	}
+	
+	#diversity-genus-legend-title{
+		display:none;
+	}
+	
+
+	#diversity-bentity-legend-title{
+		display:none;
+		opacity:0;
+	}
+	
+	.categoryName{
+		display:none;
+	}
+	
+	
+	
+
+}
+ 
