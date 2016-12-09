@@ -1,5 +1,7 @@
 ### A biodiversity visualization explorer interface using D3.js and leaflet.js
 
+#### Visualization Demo 
+
 #### MAP VISUALIZATION####
 
   - __Type :__  Biodiversity visualization 
@@ -20,3 +22,4 @@
 ```
 
  - __Attributes :__ Using coordinates to create markers on map. If value field is present it represents the size of marker. Currently on circles are suported as markers but other marker option will be added.
+ 
