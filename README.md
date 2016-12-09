@@ -23,3 +23,11 @@
 
  - __Attributes :__ Using coordinates to create markers on map. If value field is present it represents the size of marker. Currently on circles are suported as markers but other marker option will be added.
  
+
+Test Data : https://gitlab.com/Big4-Project/biodiversityMaps/blob/master/data/circle_data1.tsv
+
+License : 
+
+Jquery : MIT License (MIT) 
+Bootstrap : MIT License (MIT)
+d3 js :  BSD license
