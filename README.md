@@ -1,6 +1,6 @@
 ### A biodiversity visualization explorer interface using D3.js and leaflet.js
 
-#### Visualization Demo 
+#### Visualization Demo https://big4-project.gitlab.io/biodiversityMaps
 
 #### MAP VISUALIZATION####
 
