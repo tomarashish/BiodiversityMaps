@@ -121,13 +121,14 @@ function init(collection){
 		L.control.layers(layerControlItems).addTo(map);
 
 	
+	
     /* Initialize the SVG layer */
 	//L.svg().addTo(map); // witth new leaflet version
-   map._initPathRoot()    
+   //map._initPathRoot()    
     
 	/* We simply pick up the SVG from the map object */
-	var svg = d3.select("#map").select("svg"),
-	g = svg.append("g");
+	//var svg = d3.select("#map").select("svg"),
+	//g = svg.append("g");
 
 		
 	collection.forEach(function(d){
@@ -138,7 +139,7 @@ function init(collection){
 		d.LatLng = new L.LatLng(d.coordinates[0],
 								d.coordinates[1])
 	})
-		
+	/*
 	var feature = g.selectAll("circle")
 		.data(collection)
 		.enter().append("circle")
@@ -165,46 +166,28 @@ function init(collection){
 		)
 	} // end of update 
        
-	d3.select("#saveMap").on("click", exportAsImage);
+	
+	
+	function doImage(err, canvas) {
+            var img = document.createElement('img');
+            var dimensions = map.getSize();
+            imgRatio = dimensions.x / dimensions.y;
+            img.width = 900;
+            img.height = 700 / imgRatio;
+            img.src = canvas.toDataURL();
+			console.log("hi");
+            document.getElementById('images').innerHTML = '';
+            document.getElementById('images').appendChild(img);
+        }
+	
+	 d3.select('#saveMap').on('click', function() {
+            leafletImage(map, doImage);
+        });
+	
+*/
+   addressPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "500"] ; });
+
+
+	var heat = L.heatLayer(addressPoints, {radius: 15}).addTo(map);
 } // end of init
 
- //Saving the svg element as png on save button 
-    function exportAsImage(){
-    
-        var svg = document.querySelector( '#map' );
-
-        var svgData = new XMLSerializer().serializeToString( svg );
-
-        var canvas = document.createElement( "canvas" );
-        var ctx = canvas.getContext( "2d" );
-
-        canvas.height = 500;
-        canvas.width = 900;
-        var dataUri = '';
-        dataUri = 'data:image/svg+xml;base64,' + btoa(svgData);
- 
-        var img = document.createElement( "img" );
- 
-        img.onload = function() {
-            ctx.drawImage( img, 0, 0 );
- 
-            // Initiate a download of the image
-            var a = document.createElement("a");
-    
-            a.download = "treeview" + ".png";
-            a.href = canvas.toDataURL("image/png");
-            document.querySelector("body").appendChild(a);
-            a.click();
-            document.querySelector("body").removeChild(a);
- 
-            // Image preview in case of "save image modal"
-            
-            /*var imgPreview = document.createElement("div");
-              imgPreview.appendChild(img);
-              document.querySelector("body").appendChild(imgPreview);
-            */
-        };
-    	console.log(dataUri);
-        img.src = dataUri;
-    }
-    

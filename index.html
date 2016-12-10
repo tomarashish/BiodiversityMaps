@@ -18,11 +18,12 @@
      <!-- using leaflet js and css -->
      <script src="src/leaflet.js"></script>
      <link rel="stylesheet" href="css/leaflet.css">
-     
+     <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.3/leaflet-image.js'></script>
+	 <script src="src/leaflet-heat.js"></script>
+	 
      <!--script-->
      <link rel="stylesheet" type="text/css" href="css/style.css">
      <link rel="stylesheet" href="css/bootstrap.min.css">
-	 
 	 <link rel="stylesheet" href="css/map.css">
 	 
   </head>
@@ -68,23 +69,27 @@
      <div class="container-fluid">
          
          <div id="load-data">
-          <div style="width:700px; margin-left:auto; margin-right:auto; margin-top: 50px">
+          <div class="row" style="width:700px; margin-left:auto; margin-right:auto; margin-top:100px">
 
-                <div style=" margin-bottom:100px">                
+                <div style="font-size: 20px; padding-bottom:100px">                
                     <center>Visualize Geographical Markers</center>
                 </div>
+			  
                 <div class="file">
                     <label class="btn btn-block btn-primary"><i class="fa fa-upload" aria-hidden="true"></i>
                        &nbsp;&nbsp; Choose Marker File <input type="file" id="upload_file" style="display: none;">
                     </label>
-					<button class="btn btn-block btn-default"><a href="data/circle_data1.tsv" download="test_data.tsv">Download Example File</a></button>
+					
                     <!--label><figure><i class="fa fa-upload fa-4x" aria-hidden="true"></i></figure> <span>Load Example</span></label-->
-                </div>
-              																																																																																																																																																																																																																																																																																																																				<div style="padding-top:50px;  padding-bottom:20px">                
+                </div> 													
+			 <br><br>
+			 <div style="font-size: 20px;">                
                     <center>Try Example Data </center>
                 </div>
-              
+               <br><br>
                 <div class="dropdown">
+					<a href="data/circle_data1.tsv" download="test_data.tsv">
+					<button class="btn btn-block btn-primary">Download Example File</button></a><br>
                       <button class="btn btn-block btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp;&nbsp;
                     Select Example
                       <span class="caret"></span></button>
@@ -94,8 +99,8 @@
                         <li style="text-align:center"><a href="#" id="example3">Exmaple 3</a></li>
                       </ul>
                 </div>  
-            </div>
-             
+            
+             </div>
          </div>
          
          <div id="show-viz"> 
