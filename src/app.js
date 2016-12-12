@@ -124,11 +124,11 @@ function init(collection){
 	
     /* Initialize the SVG layer */
 	//L.svg().addTo(map); // witth new leaflet version
-   //map._initPathRoot()    
+   map._initPathRoot()    
     
 	/* We simply pick up the SVG from the map object */
-	//var svg = d3.select("#map").select("svg"),
-	//g = svg.append("g");
+	var svg = d3.select("#map").select("svg"),
+	g = svg.append("g");
 
 		
 	collection.forEach(function(d){
@@ -139,7 +139,7 @@ function init(collection){
 		d.LatLng = new L.LatLng(d.coordinates[0],
 								d.coordinates[1])
 	})
-	/*
+	
 	var feature = g.selectAll("circle")
 		.data(collection)
 		.enter().append("circle")
@@ -184,10 +184,35 @@ function init(collection){
             leafletImage(map, doImage);
         });
 	
-*/
+	/*
+	
+	var center = [39.4, -78];
+	
+	var options = {
+    radius : 12,
+    opacity: 0.5,
+		lng: function(d){
+        return d.coordinates[0];
+    },
+    lat: function(d){
+        return d.coordinates[1];
+    },
+    duration: 500
+};
+	
+	var latFn = d3.random.normal(center[0], 1);
+	var longFn = d3.random.normal(center[1], 1);
+	
+	var hexLayer = L.hexbinLayer().addTo(map)
+		hexLayer.colorScale().range(['blue', 'blue']);
+	
+	hexLayer.data(collection);
+	
+	
    addressPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "500"] ; });
 
 
 	var heat = L.heatLayer(addressPoints, {radius: 15}).addTo(map);
+	*/
 } // end of init
 
