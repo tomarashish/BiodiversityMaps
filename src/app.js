@@ -140,18 +140,23 @@ function init(collection){
 								d.coordinates[1])
 	})
 	
+	
+
+	
 	var feature = g.selectAll("circle")
 		.data(collection)
 		.enter().append("circle")
-		.style("stroke", "black")
+		//.style("stroke", "black")
 		.style("stroke-width", "2px")
 		.style("opacity", .6) 
-		.style("fill", "red")
-		.attr("r", 10);  
+		.style("fill", "blue")
+		.attr("r", "10")
+		//.attr("width", 15)
+   		//.attr("height", 15);  
 	
        feature.append("text")
 	   //.attr("dx", function(d){return -20})
-	   .text(function(d){return "CIRCLE"})
+	   .text(function(d){return "RECT"})
        
 	map.on("viewreset", update);
 	update();
@@ -161,13 +166,13 @@ function init(collection){
 		function(d) { 
 			return "translate("+ 
 				map.latLngToLayerPoint(d.LatLng).x +","+ 
-				map.latLngToLayerPoint(d.LatLng).y +")";
+				map.latLngToLayerPoint(d.LatLng).y +")"+ "rotate(-45)";
 			}
 		)
 	} // end of update 
        
 	
-	
+	/*
 	function doImage(err, canvas) {
             var img = document.createElement('img');
             var dimensions = map.getSize();
@@ -183,36 +188,33 @@ function init(collection){
 	 d3.select('#saveMap').on('click', function() {
             leafletImage(map, doImage);
         });
-	
+	*/
 	/*
-	
-	var center = [39.4, -78];
-	
+	// hexabin markers
 	var options = {
     radius : 12,
-    opacity: 0.5,
-		lng: function(d){
-        return d.coordinates[0];
-    },
+	lng: function(d){
+        return d[1];
+    	},
     lat: function(d){
-        return d.coordinates[1];
-    },
+        return d[0];
+    	},
+    opacity: 0.5,
     duration: 500
 };
 	
-	var latFn = d3.random.normal(center[0], 1);
-	var longFn = d3.random.normal(center[1], 1);
+	var cordinates = collection.map(function(d){ return [d.coordinates[0], d.coordinates[1]]; })
 	
-	var hexLayer = L.hexbinLayer().addTo(map)
+	var hexLayer = L.hexbinLayer(options).addTo(map)
 		hexLayer.colorScale().range(['blue', 'blue']);
+	hexLayer.data(cordinates)
 	
-	hexLayer.data(collection);
 	
+	//heatmap 
 	
-   addressPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "500"] ; });
-
-
-	var heat = L.heatLayer(addressPoints, {radius: 15}).addTo(map);
+    cordPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "500"] ; });
+	
+	var heat = L.heatLayer(cordPoints, {radius: 15}).addTo(map);
 	*/
 } // end of init
 
