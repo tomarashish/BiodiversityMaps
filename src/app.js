@@ -129,7 +129,7 @@ function init(collection){
 
 	// Setting custom icon marker 
 	var myIcon = L.icon({
-		iconUrl: "../data/images/beetle1.png",
+		iconUrl: "../data/images/butterfly.png",
 		iconSize:[35,35],
 	})
 	
