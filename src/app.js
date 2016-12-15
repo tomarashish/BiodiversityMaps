@@ -144,7 +144,7 @@ function init(collection){
 		var m = L.marker( [d.coordinates[0], d.coordinates[1]], {icon: myIcon} );
 		
 	  //for marker icon 
-		map.addLayer(m);
+		//map.addLayer(m);
 		
 	 //For marker cluster	
 	 //markerClusters.addLayer( m );
@@ -231,13 +231,13 @@ function init(collection){
 	var hexLayer = L.hexbinLayer(options).addTo(map)
 		hexLayer.colorScale().range(['blue', 'blue']);
 	hexLayer.data(cordinates)
-	
+	*/
 	
 	//heatmap 
 	
     cordPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "500"] ; });
 	
 	var heat = L.heatLayer(cordPoints, {radius: 15}).addTo(map);
-	*/
+	
 } // end of init
 
