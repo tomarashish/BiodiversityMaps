@@ -31,3 +31,14 @@ License :
 Jquery : MIT License (MIT) 
 Bootstrap : MIT License (MIT)
 d3 js :  BSD license
+
+#### Add Screenshots
+
+![Image of visualization]
+(https://gitlab.com/Big4-Project/biodiversityMaps/data/screenshots/screenshot3.png)
+
+![Image of visualization]
+(https://gitlab.com/Big4-Project/biodiversityMaps/data/screenshots/screenshot2.png)
+
+![Image of visualization]
+(https://gitlab.com/Big4-Project/biodiversityMaps/data/screenshots/screenshot1.png)
