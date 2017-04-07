@@ -139,7 +139,7 @@ function init(collection){
 		d.LatLng = new L.LatLng(d.coordinates[0],
 								d.coordinates[1])
 	})
-	
+	/*
 	var feature = g.selectAll("circle")
 		.data(collection)
 		.enter().append("circle")
@@ -184,7 +184,7 @@ function init(collection){
             leafletImage(map, doImage);
         });
 	
-	/*
+
 	
 	var center = [39.4, -78];
 	
@@ -211,8 +211,8 @@ function init(collection){
 	
    addressPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "500"] ; });
 
-
+*/
 	var heat = L.heatLayer(addressPoints, {radius: 15}).addTo(map);
-	*/
+
 } // end of init
 
