@@ -225,14 +225,34 @@ text {
 }
 
 .nav li a{
-     font-size:18px;
-    font-family: sans-serif;
-    color: white !important;
+  font-size:18px;
+  font-family: sans-serif;
+  color: #ffffff !important;
 }
 
 .nav li a:hover{
     opacity: 0.8;
 }
+
+.navbar {
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+
+.navbar{
+  background: rgb(68, 68, 68); //IE
+  background: rgba(0, 0, 0, 0.78); //NON-IE
+}
+
+/*
+.navbar.scrolled {
+  background: rgb(68, 68, 68); //IE
+  background: rgba(0, 0, 0, 0.78); //NON-IE
+}
+*/
 
 .footer {
     font-size:18px;
@@ -268,7 +288,6 @@ text {
 .parallex-img3 {
   background-image: url("../data/images/parallex3.png");
   min-height:400px;
-  width: 100%;
 }
 
 .inner{
