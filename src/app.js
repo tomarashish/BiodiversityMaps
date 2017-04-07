@@ -241,7 +241,7 @@ function init(collection){
 	
 	//heatmap 
 
-   addressPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "500"] ; });
+   addressPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "1500"] ; });
 
 	var heat = L.heatLayer(addressPoints, {radius: 15}).addTo(map);
 

@@ -1,165 +1,191 @@
 <!DOCTYPE html>
 <html>
- <head>
-    <title>Biodiversity Visualization</title>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     
-    <!-- using local jquery, bootstrap and d3 libs -->
-    <script type='text/javascript' src='src/jquery.js'></script>
-    <script src="src/bootstrap.min.js"></script>
-    <script src="src/d3.v3.min.js"></script>
-   
-    <!-- fontawesome and custom css -->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-     
-     
-     <!-- using leaflet js and css -->
-     <script src="src/leaflet.js"></script>
-     <link rel="stylesheet" href="css/leaflet.css">
-	 
-	 <!-- using leaflet marker cluster js and css -->
-	 <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/MarkerCluster.css" />
-    <link rel="stylesheet" type="text/css" href="css/MarkerCluster.Default.css" />
-	 
-	  <!-- using leaflet marker image and heatmap js -->
-     <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.3/leaflet-image.js'></script>
-	 <script src="src/leaflet-heat.js"></script>
-	 
-	 <!-- hexabins layer -->
-	 <script src="src/hexbin.js"></script>
-	 <script src="src/leaflet-d3.js"></script>
-	 
-     <!--script-->
-     <link rel="stylesheet" type="text/css" href="css/style.css">
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-	 <link rel="stylesheet" href="css/map.css">
-	 
-  </head>
-    
-    
-  <body>
-     
-     <!-- Navigation -->
-     
-     <nav class="navbar navbar-fixed-top" >
-         <div class="container">
-            <div class="navbar-header">
-                
-                <button type="buton" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<head>
+  <title>Biodiversity Visualization</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- using local jquery, bootstrap and d3 libs -->
+  <script type='text/javascript' src='src/jquery.js'></script>
+  <script src="src/bootstrap.min.js"></script>
+  <script src="src/d3.v3.min.js"></script>
+
+  <!-- fontawesome and custom css -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- using leaflet js and css -->
+  <script src="src/leaflet.js"></script>
+  <link rel="stylesheet" href="css/leaflet.css">
+
+  <!-- using leaflet marker cluster js and css -->
+  <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/MarkerCluster.css" />
+  <link rel="stylesheet" type="text/css" href="css/MarkerCluster.Default.css" />
+
+  <!-- using leaflet marker image and heatmap js -->
+  <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.3/leaflet-image.js'></script>
+  <script src="src/leaflet-heat.js"></script>
+
+  <!-- hexabins layer -->
+  <script src="src/hexbin.js"></script>
+  <script src="src/leaflet-d3.js"></script>
+
+  <!--script-->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/map.css">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+
+  <nav class="navbar navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+
+        <button type="buton" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <!-- Header -->
-                <img src="data/images/big4.jpeg" height="50px" width="55px">
-                <a class="navbar-brand" href="index.html">Biodiversity Map</a>
-            </div>
-            <div>
-                <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li ><a href="about.html">About</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-                </div>
-            </div>
-         </div>
-     </nav>
-     
-     <footer class="footer">
-        <div class="container">
-            <p>Developed By :  
-             <span><a href="http://big4-project.eu/" target="_blank">BIG4 Group</a></span> <span style="float:right"> Project Funded By <img id="footer-logo" height="30" width="40" src="data/images/logoeu.gif"/></span>
-            </p>
+        <!-- Header -->
+        <!--<img src="data/images/big4.jpeg" height="50px" width="55px">-->
+        <a class="navbar-brand" href="index.html">BiodiversityMap</a>
+      </div>
+      <div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a></li>
+          <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a></li>
+        </ul>
         </div>
-     </footer>
-     
-     
-     <div class="container-fluid">
-         <div class="row">
-         <div id="load-data">
+      </div>
+    </div>
+  </nav>
 
-            <div class="parallex-img1">
-              <div class="inner"> 
-                <header>
-                  <h2>BIODIVERSITY MAPS</h2>
-  	             </header>
-                <p style="font-size:30px">
-                  Mapping Tool for
-                  <br>visualization
-                    <br> of biodiversity data.
-                  <br> Using D3 and Leaflet.js
-                  <br> to create biodiversity dots on map
-                </p>
-                 <div class="caption"><a href="#dataUpload">
-                   <button class="btn btn-block border">TRY IT</button></a>
-          
-                  </div>
-              </div>
+  <footer class="footer">
+    <div class="container">
+      <p>Developed By :
+        <span><a href="http://big4-project.eu/" target="_blank">BIG4 Group</a></span> <span style="float:right"> Project Funded By <img id="footer-logo" height="30" width="40" src="data/images/logoeu.gif"/></span>
+      </p>
+    </div>
+  </footer>
+
+
+  <div class="container-fluid">
+
+    <div id="load-data">
+      <div class="row">
+        <div class="parallex-img1">
+          <div class="inner">
+            <header>
+              <h2>BIODIVERSITY MAPS</h2>
+            </header>
+            <p style="font-size:30px;  font-family: 'Muli', Arial, sans-serif;">
+              Mapping Tool for
+              <br>visualization
+              <br> of biodiversity data.
+              <br> Using D3 and Leaflet.js
+              <br> to create biodiversity dots on map
+            </p>
+            <div class="caption">
+              <a href="#dataUpload">
+                <button class="btn btn-block border">TRY IT</button></a>
             </div>
+          </div>
+        </div>
 
-            <div id="dataUpload" style="width:500px; margin-left:auto; margin-right:auto; margin-top:100px; margin-bottom:100px"> 
-                <div style="font-size: 20px; padding-bottom:100px">                
-                    <center>Visualize Geographical Markers</center>
-                </div>
-			  
-                <div class="file">
-                    <label class="btn btn-block btn-primary"><i class="fa fa-upload" aria-hidden="true"></i>
-                       &nbsp;&nbsp; Choose Marker File <input type="file" id="upload_file" style="display: none;">
-                    </label>
-					
-                    <!--label><figure><i class="fa fa-upload fa-4x" aria-hidden="true"></i></figure> <span>Load Example</span></label-->
-                </div> 													
-			 <br><br>
-			 <div style="font-size: 20px;">                
-                    <center>Try Example Data </center>
-                </div>
-               <br><br>
-                <div class="dropdown">
-					<a href="data/circle_data1.tsv" download="test_data.tsv">
-					<button class="btn btn-block btn-primary">Download Example File</button></a><br>
-                      <button class="btn btn-block btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp;&nbsp;
+        <div class="row" id="dataUpload">
+          <div style="font-size: 30px;  padding-top:100px  font-family: 'Muli', Arial, sans-serif">
+            <center>Visualize Geographical Markers</center>
+          </div>
+          <div class="col-md-12" style="background-color:#f7f7f7; padding-top:20px; padding-bottom:20px; margin-top:100px; margin-bottom:100px">
+
+            <div class="col-md-4 file">
+              <div style="font-size: 20px;">
+                <center>UPLOAD A FILE </center>
+              </div>
+
+              <div class="caption">
+                <label class="btn btn-block btn-border"><i class="fa fa-upload" aria-hidden="true"></i>
+                        Choose File <input type="file" id="upload_file" style="display: none;">
+                      </label>
+                <br>
+                <br>
+                <button class="btn btn-block btn-border">SUBMIT</button>
+              </div>
+              <!--label><figure><i class="fa fa-upload fa-4x" aria-hidden="true"></i></figure> <span>Load Example</span></label-->
+            </div>
+            <div class="col-md-4">
+              <div style="font-size: 20px;">
+                <center>Try Example Data </center>
+              </div>
+
+              <div class="dropdown caption">
+                <button class="btn btn-block btn-border" onClick="location.href='data/circle_data1.tsv'">
+                  Download Example <i class="fa fa-download" aria-hidden="true"></i> </button><br>
+                <button class="btn btn-block btn-border dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp;&nbsp;
                     Select Example
                       <span class="caret"></span></button>
-                      <ul class="dropdown-menu btn-block" style="font-size: 18px">
-                        <li style="text-align:center"><a href="#" id="example1">Example 1</a></li>
-                        <!--li style="text-align:center"><a href="#" id="example2">Example 2</a></li>
+                <ul class="dropdown-menu btn-block btn-border" style="font-size: 18px">
+                  <li style="text-align:center"><a href="#" id="example1">Example 1</a></li>
+                  <!--li style="text-align:center"><a href="#" id="example2">Example 2</a></li>
                         <li style="text-align:center"><a href="#" id="example3">Exmaple 3</a></li-->
-                      </ul>
-                </div>  
+                </ul>
               </div>
-           
-           <div class="parallex-img2"></div>
-           <div style="height:400px"></div>
-           <div class="parallex-img3"></div>
-           </div>
-         </div>
-         <div class="row">
-         <div id="show-viz"> 
-             <!--div>
+            </div>
+            <div class="col-md-4">
+              <div>
+                <div style="font-size: 20px;">
+                  <center>Paste Comma Seperated Data</center>
+                </div>
+                <br>
+                <textarea id="message" name="message" rows="500" style="height:300px;width:600px"></textarea>
+              </div>
+              <div class="caption">
+                <button class="btn btn-block btn-border">SUBMIT</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="parallex-img2"></div>
+        <div style="height:400px"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="show-viz">
+        <!--div>
                  <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation"></nav>
              </div-->
-                 
-            <div id="worldMap" class="col-md-12"> 
-                <div class="chart-wrapper">
-                    <div class="chart-title">Geographical Visualization
-               
-                       <!--input id="the-basics" class="typeahead" type="text" placeholder="Node Name"-->
-                 <!--button id="saveMap" type="btn btn-raised"  class="btn btn-default btn-raised btn-responsive"><b>Save <span class="icon-download icon-medium"></span></b></button-->
-					 </div>
-                    <div id="map" class="chart-area" style="width: 100%; height: 900px">
-                    </div>
-                </div>
+
+        <div id="worldMap" class="col-md-12">
+          <div class="chart-wrapper">
+            <div class="chart-title">Geographical Visualization
+
+              <!--input id="the-basics" class="typeahead" type="text" placeholder="Node Name"-->
+              <!--button id="saveMap" type="btn btn-raised"  class="btn btn-default btn-raised btn-responsive"><b>Save <span class="icon-download icon-medium"></span></b></button-->
             </div>
-        
-            <script type="text/javascript" src="src/donutD3.js"></script>
-            <script type='text/javascript' src='src/markers.js'></script>
-            <script type='text/javascript' src='src/app.js'></script>
+            <div id="map" class="chart-area" style="width: 100%; height: 900px">
+            </div>
+          </div>
         </div>
-       </div>
+
+        <script type="text/javascript" src="src/donutD3.js"></script>
+        <script type='text/javascript' src='src/markers.js'></script>
+        <script type='text/javascript' src='src/app.js'></script>
+      </div>
     </div>
-     
-  </body>
+  </div>
+
+</body>
+
 </html>
