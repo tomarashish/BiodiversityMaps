@@ -78,7 +78,7 @@ $('.dropdown-menu a').on('click', function(){
 function init(collection){
     
     d3.select("#load-data").style("visibility","hidden").style("display", "none");
-    d3.select("#show-viz").style("visibility","visible")
+    d3.select("#show-viz").style("display", "block");
     
 	// Parsing data into json format
 	collection.forEach(function(d){

@@ -20,14 +20,23 @@
 }
 
 
+a{
+   text-decoration: none;
+}
+
 body {
   font-family: 'Muli', Arial, sans-serif;
   color: #777;
   background-color: rgb(186, 186, 186);
+  overflow-x: hidden; /*hide horizontal overflow*/
 }
 
 container-fluid{
 	margin-top: 100px;
+  padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .btn-default {
@@ -161,12 +170,12 @@ html {
 }
 
 #show-viz {
-	visibility: hidden;
+  display: none;
 	margin-top: 50px;
 }            
 
 #load-data{
-    visibility:visible;
+  display: block;
     /*background-color: #babcbe;*/
 } 
 
@@ -305,7 +314,6 @@ text {
 
 .parallex-img1, .parallex-img2, .parallex-img3{
   position: relative;
-  opacity: 0.65;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -324,7 +332,7 @@ text {
 
 .parallex-img3 {
   background-image: url("../data/images/parallex3.png");
-  min-height:500px;
+  min-height:300px;
 }
 
 .inner{
@@ -344,15 +352,14 @@ text {
    font-family: 'Muli', Arial, sans-serif;
   margin-top: 50px;
   margin-bottom: 20px;
-  width: 100%;
   text-align: center;
 }
 
 .caption .border {
   border: solid 6px;
   color: #000;
-  padding: 20px 100px 20px 100px;
-  font-size: 30px;
+  padding: 20px 20px;
+  font-size: 25px;
   letter-spacing: 5px;
 }
 

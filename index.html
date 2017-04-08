@@ -13,7 +13,7 @@
   <script src="src/d3.v3.min.js"></script>
 
   <!-- fontawesome and custom css -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
   <!-- using leaflet js and css -->
@@ -61,10 +61,10 @@
       <div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-          <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a></li>
-          <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a></li>
-        </ul>
+            <li class="active"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a></li>
+            <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -81,8 +81,7 @@
 
   <div class="container-fluid">
 
-    <div id="load-data">
-      <div class="row">
+      <div id="load-data" class="row">
         <div class="parallex-img1">
           <div class="inner">
             <header>
@@ -103,7 +102,7 @@
         </div>
 
         <div class="row" id="dataUpload">
-          <div style="font-size: 30px;  padding-top:100px  font-family: 'Muli', Arial, sans-serif">
+          <div style="font-size: 30px; margin-top:100px; font-family: 'Muli', Arial, sans-serif">
             <center>Visualize Geographical Markers</center>
           </div>
           <div class="col-md-12" style="background-color:#f7f7f7; padding-top:20px; padding-bottom:20px; margin-top:100px; margin-bottom:100px">
@@ -144,7 +143,7 @@
             <div class="col-md-4">
               <div>
                 <div style="font-size: 20px;">
-                  <center>Paste Comma Seperated Data</center>
+                  <center>Paste Data</center>
                 </div>
                 <br>
                 <textarea id="message" name="message" rows="500" style="height:300px;width:600px"></textarea>
@@ -156,13 +155,32 @@
             </div>
           </div>
         </div>
-
+        
         <div class="parallex-img2"></div>
-        <div style="height:400px"></div>
+        
+        <div class="row" id="about">
+           <div  style="font-size: 30px; font-weight:bold; margin-top:100px; font-family: 'Muli', Arial, sans-serif">
+            <center>ABOUT</center>
+          </div>
+          <p style="font-size:30px;  padding: 30px 100px; font-family: 'Muli', Arial, sans-serif;">
+          </p>
+        </div>
+      
+        <div class="parallex-img3"> </div>
+        
+        <div class="row" id="contact">
+           <div  style="font-size: 30px; margin-top:100px; margin-bottom:100px; font-family: 'Muli', Arial, sans-serif">
+            <center>Contact</center>
+          </div>
+          <p>
+          
+          </p>
+        </div>
+        
       </div>
-    </div>
-    <div class="row">
-      <div id="show-viz">
+    
+    <div id="show-viz" class="row">
+  
         <!--div>
                  <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation"></nav>
              </div-->
@@ -182,7 +200,7 @@
         <script type="text/javascript" src="src/donutD3.js"></script>
         <script type='text/javascript' src='src/markers.js'></script>
         <script type='text/javascript' src='src/app.js'></script>
-      </div>
+      
     </div>
   </div>
 
