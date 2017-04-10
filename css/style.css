@@ -339,40 +339,15 @@ text {
   position: absolute;
   left: 0;
   top: 30%;
-  margin-left: 40%;
+  margin-left: 35%;
+  margin-right: 35%;
   background: rgba(52, 27, 43, 0.5);
   color: #fff;
-  padding: 3em;
+  padding: 2em;
   text-align: center;
   display: inline-block;
 }
 
-
-.caption {
-   font-family: 'Muli', Arial, sans-serif;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.caption .border {
-  border: solid 6px;
-  color: #000;
-  padding: 20px 20px;
-  font-size: 25px;
-  letter-spacing: 5px;
-}
-
-.caption .btn-border{
-  margin: auto;
-  width: 50% !important; 
-  border: solid 4px;
-  color: #000;
-  padding: 20px 30px 20px 30px;
-  font-size: 15px;
-  letter-spacing: 5px;
-}
-  
 .inner header {
    font-family: 'Muli', Arial, sans-serif;
     display: inline-block;
@@ -381,4 +356,36 @@ text {
     margin: 0 0 2em 0;
     padding: 3px 0 3px 0;
     font-weight: bolder !important;
+}
+
+.inner p{
+  font-size: 22px;  
+  font-family: 'Muli', Arial, sans-serif;
+}
+
+.caption {
+  font-family: 'Muli', Arial, sans-serif;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.caption .border {
+  border: solid 4px;
+  color: #000;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+.caption .btn-border{
+  margin: auto;
+  width: 50% !important; 
+  border: solid 4px;
+  color: #000;
+  padding: 20px;
+  font-size: 15px;
+  font-weight: bolder;
+  letter-spacing: 2px;
 }
