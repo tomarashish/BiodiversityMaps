@@ -21,7 +21,7 @@
 
 
 a{
-   text-decoration: none;
+   text-decoration: none !important;
 }
 
 body {
@@ -240,13 +240,13 @@ text {
 
 /*custome style on navbar brand */
 .navbar .navbar-brand {
-  color: #777;
   color: #fff;
   position: absolute;
   left: 40px;
   margin: 10px 10px;
   font-size: 25px !important;
- font-family: 'Muli', Arial, sans-serif;
+  font-weight: bold;
+  font-family: 'Muli', Arial, sans-serif;
   padding: 10px 20px;
 }
 
@@ -275,6 +275,7 @@ text {
 /* navbar li on hover */
 .navbar .navbar-nav > li > a:hover {
   color: #68B3C8;
+  background-color: transparent;
 }
 
 
@@ -288,9 +289,8 @@ text {
 .navbar .navbar-nav>.active>a,
 .navbar .navbar-nav>.active>a:focus,
 .navbar .navbar-nav>.active>a:hover {
-  background-color: #66615b !important;
+  background-color: transparent !important;
   color: #fff !important;
-  border-radius: 6px !important;
 }
 
 /*
@@ -339,8 +339,9 @@ text {
   position: absolute;
   left: 0;
   top: 30%;
-  margin-left: 35%;
-  margin-right: 35%;
+  margin-left: 40%;
+  margin-right: 40
+    %;
   background: rgba(52, 27, 43, 0.5);
   color: #fff;
   padding: 2em;
