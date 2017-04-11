@@ -2,11 +2,11 @@
 @import url(https://fonts.googleapis.com/css?family=Muli);
 @media (max-width: 762px){
     .btn-responsive {
-      font-size:80%;
-      line-height: 1.4;
-      -webkit-border-radius: 3px;        
-      -moz-border-radius: 3px;
-      border-radius: 3px;
+      padding: 4px 9px !important;
+      font-size: 12px !important;
+      line-height: 1.5;
+      white-space:normal !important;
+      word-wrap:break-word; 
     }
   
   .inner{
@@ -22,7 +22,11 @@
 
 @media (min-width: 760px) and (max-width: 992px) {
   .btn-responsive {
-    font-size:20px !important;
+    padding: 4px 9px !important;
+    font-size: 12px !important;
+    line-height: 1.5;
+    white-space:normal !important;
+    word-wrap:break-word; 
   }
   
   .inner{
