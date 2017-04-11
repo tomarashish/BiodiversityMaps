@@ -9,11 +9,6 @@
       word-wrap:break-word; 
     }
   
-  .inner{
-    margin-left: 20% !important;
-    margin-right: 20% !important;
-  }
-  
   .inner p{
     font-size: 15px !important;  
   }
@@ -27,11 +22,6 @@
     line-height: 1.5;
     white-space:normal !important;
     word-wrap:break-word; 
-  }
-  
-  .inner{
-    margin-left: 20% !important;
-    margin-right: 20% !important;
   }
   
   .inner p{
