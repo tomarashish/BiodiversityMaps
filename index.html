@@ -81,32 +81,35 @@
 
   <div class="container-fluid">
 
-    <div id="load-data" class="row">
-      <div class="col-md-12 col-sm-12 parallex-img1">
-        <div class="inner">
-          <header>
-            <h3><b>BIODIVERSITY MAPS</b></h3>
-          </header>
-          <p>
-            Mapping Tool for
-            <br>visualization
-            <br> of biodiversity data.
-            <br> Using D3 and Leaflet.js
-            <br> to create biodiversity dots on map
-          </p>
-          <div class="caption">
-            <a href="#dataUpload">
-              <button class="btn btn-block btn-responsive btn-border">TRY IT</button></a>
+    <div id="load-data">
+      
+      <div class="row parallex-img1">
+        <div class="inner"> 
+          <div class="col-md-12 col-sm-12">
+              <header>
+                <h3><b>BIODIVERSITY MAPS</b></h3>
+              </header>
+              <p>
+                Mapping Tool for
+                <br>visualization
+                <br> of biodiversity data.
+                <br> Using D3 and Leaflet.js
+                <br> to create biodiversity dots on map
+              </p>
+            </div>
+            <div class="caption col-md-12 col-xs-12">
+              <a href="#dataUpload">
+                <button class="btn btn-block btn-responsive btn-border">TRY IT</button></a>
+            </div>
           </div>
-        </div>
-      </div>
+          </div>
+      
+      <div class="row" id="dataUpload">
 
-      <div class="row col-md-12 col-sm-12" id="dataUpload">
-        
-        <div style="font-size: 30px; margin-top:100px; font-family: 'Muli', Arial, sans-serif">
+        <div class="col-md-12 col-sm-12" style="font-size: 30px; margin-top:100px; font-family: 'Muli', Arial, sans-serif">
           <center>Visualize Geographical Markers</center>
         </div>
-        
+
         <div class="col-md-12 col-sm-12" style="background-color:#f7f7f7; padding-top:20px; padding-bottom:20px; margin-top:100px; margin-bottom:100px">
 
           <div class="col-md-4 col-sm-12 file">
@@ -115,12 +118,12 @@
             </div>
 
             <div class="caption">
-              <label class="btn btn-block btn-border"><i class="fa fa-upload" aria-hidden="true"></i>
+              <label class="btn btn-block btn-responsive btn-border"><i class="fa fa-upload" aria-hidden="true"></i>
                         Choose File <input type="file" id="upload_file" style="display: none;">
                       </label>
               <br>
               <br>
-              <button class="btn btn-block btn-border">SUBMIT</button>
+              <button class="btn btn-block btn-responsive btn-border">SUBMIT</button>
             </div>
             <!--label><figure><i class="fa fa-upload fa-4x" aria-hidden="true"></i></figure> <span>Load Example</span></label-->
           </div>
@@ -130,12 +133,12 @@
             </div>
 
             <div class="dropdown caption">
-              <button class="btn btn-block btn-border" onClick="location.href='data/circle_data1.tsv'">
+              <button class="btn btn-block btn-responsive btn-border" onClick="location.href='data/circle_data1.tsv'">
                   Download Example <i class="fa fa-download" aria-hidden="true"></i> </button><br>
-              <button class="btn btn-block btn-border dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp;&nbsp;
+              <button class="btn btn-block btn-responsive btn-border dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp;&nbsp;
                     Select Example
                       <span class="caret"></span></button>
-              <ul class="dropdown-menu btn-block btn-border" style="font-size: 18px">
+              <ul class="dropdown-menu btn-block btn-responsive btn-border" style="font-size: 18px">
                 <li style="text-align:center"><a href="#" id="example1">Example 1</a></li>
                 <!--li style="text-align:center"><a href="#" id="example2">Example 2</a></li>
                         <li style="text-align:center"><a href="#" id="example3">Exmaple 3</a></li-->
@@ -148,29 +151,34 @@
                 <center>Paste Data</center>
               </div>
               <br>
-              <textarea id="message" name="message" rows="500" style="height:100px;width:100px"></textarea>
+              <textarea id="message" name="message" rows="500" style="height:200px; width:200px"></textarea>
             </div>
             <div class="caption">
-              <button class="btn btn-block btn-border">SUBMIT</button>
+              <button class="btn btn-block btn-responsive btn-border">SUBMIT</button>
             </div>
 
           </div>
         </div>
       </div>
 
-      <!--div class="row parallex-img2"></div-->
+       <div class="row">
+        <div class="parallex-img2"> </div>
+      </div>
 
       <div class="row" id="about">
+        <div class="col-md-12 col-sm-12">
         <div style="font-size: 30px; font-weight:bold; margin-top:100px; font-family: 'Muli', Arial, sans-serif">
           <center>ABOUT</center>
         </div>
         <p style="font-size:30px;  padding: 30px 100px; font-family: 'Muli', Arial, sans-serif;">
         </p>
+        </div>
       </div>
-
-      <!--div class="parallex-img3"> </div-->
-
+      <div class="row">
+        <div class="parallex-img3"> </div>
+      </div>
       <div class="row" id="contact">
+        <div class="col-md-12 col-sm-12">
         <div style="font-size: 30px; margin-top:100px; margin-bottom:100px; font-family: 'Muli', Arial, sans-serif">
           <center>Contact</center>
         </div>
@@ -178,7 +186,9 @@
 
         </p>
       </div>
+      </div>
 
+      
     </div>
 
     <div id="show-viz" class="row">

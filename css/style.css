@@ -2,20 +2,36 @@
 @import url(https://fonts.googleapis.com/css?family=Muli);
 @media (max-width: 762px){
     .btn-responsive {
-        font-size:80%;
-        line-height: 1.4;
-        padding: 3px 6px;
-         -webkit-border-radius: 3px;        
-         -moz-border-radius: 3px;
-            border-radius: 3px;
+      font-size:80%;
+      line-height: 1.4;
+      -webkit-border-radius: 3px;        
+      -moz-border-radius: 3px;
+      border-radius: 3px;
     }
+  
+  .inner{
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+  }
+  
+  .inner p{
+    font-size: 15px !important;  
+  }
+  
 }
 
 @media (min-width: 760px) and (max-width: 992px) {
   .btn-responsive {
-    padding:4px 9px;
-    font-size:90%;
-    line-height: 1.5;
+    font-size:20px !important;
+  }
+  
+  .inner{
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+  }
+  
+  .inner p{
+    font-size: 18px !important;  
   }
 }
 
@@ -33,11 +49,10 @@ body {
 
 container-fluid{
 	margin-top: 100px;
-  padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
+
 
 .btn-default {
     font-size: 10px;
@@ -327,7 +342,7 @@ text {
 
 .parallex-img2 {
   background-image: url("../data/images/parallex2.png");
-  min-height:400px;
+  min-height:300px;
 }
 
 .parallex-img3 {
@@ -340,8 +355,7 @@ text {
   left: 0;
   top: 30%;
   margin-left: 40%;
-  margin-right: 40
-    %;
+  margin-right: 35%;
   background: rgba(52, 27, 43, 0.5);
   color: #fff;
   padding: 2em;
