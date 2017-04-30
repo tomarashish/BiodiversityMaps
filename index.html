@@ -119,11 +119,11 @@
 
             <div class="caption">
               <label class="btn btn-block btn-responsive btn-border"><i class="fa fa-upload" aria-hidden="true"></i>
-                        Choose File <input type="file" id="upload_file" style="display: none;">
+                     <input type="file" id="upload_file" style="display: none;"><span id="filename"> Choose File</span>  
                       </label>
               <br>
               <br>
-              <button class="btn btn-block btn-responsive btn-border">SUBMIT</button>
+              <button id="submit_file" class="btn btn-block btn-responsive btn-border">SUBMIT</button>
             </div>
             <!--label><figure><i class="fa fa-upload fa-4x" aria-hidden="true"></i></figure> <span>Load Example</span></label-->
           </div>
@@ -151,10 +151,10 @@
                 <center>Paste Data</center>
               </div>
               <br>
-              <textarea id="message" name="message" rows="500" style="height:200px; width:200px"></textarea>
+              <textarea id="text_data" name="data" rows="500"></textarea>
             </div>
             <div class="caption">
-              <button class="btn btn-block btn-responsive btn-border">SUBMIT</button>
+              <button id="submit_text" class="btn btn-block btn-responsive btn-border">SUBMIT</button>
             </div>
 
           </div>

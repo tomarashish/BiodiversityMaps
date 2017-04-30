@@ -8,20 +8,46 @@
 //https://www.iconfinder.com/icons/1110928/beetle_bug_fly_insect_insects_pest_icon#size=128
 //http://www.flaticon.com/free-icons/insect_223
 
+//Input file name display
+$("input[id='upload_file']").change(function (e) {
+    var $this = $(this);
+    $this.next().html($this.val().split('\\').pop());
+});
+
+//using url to upload data 
+var url = "http://storageName.blob.core.windows.net/containerName/file.json";
+d3.json(url, function (json) {
+    //code here
+});
+
+//data upload using textarea
+d3.select("#submit_text").on("click", function(){
+ 
+  var text_data = d3.select("#text_data")[0][0].value;
+ 
+  var collection = tsvJSON(text_data)
+  init(collection)
+  
+});
+
+
 //file upload 
 var raw_data;
 var reader = new FileReader();
-var upload_box = d3.select("#upload_file");
-
-upload_box.on("change",function() {	 reader.readAsText(this.files[0]);});
 
 
-reader.onload = function(event) {
+d3.select("#submit_file").on("click",function() {
+    console.log(d3.select("#upload_file")[0][0].files[0])
+    reader.readAsText(d3.select("#upload_file")[0][0].files[0]);
+  
+  reader.onload = function(event) {
 	var raw_data = event.target.result;
 	
 	var collection = tsvJSON(raw_data)
 	init(collection)
-}
+  }
+  
+});
 
 //http://techslides.com/convert-csv-to-json-in-javascript
 //http://mounirmesselmeni.github.io/2012/11/20/reading-csv-file-with-javascript-and-html5-file-api/
