@@ -189,7 +189,7 @@ html {
 
 #show-viz {
   display: none;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 #load-data {
@@ -349,7 +349,7 @@ text {
 }
 
 .parallex-img1 {
-  background-image: url("../data/images/parallex1jpg");
+  background-image: url("../data/images/parallex4.png");
   height: 100vh;
 }
 

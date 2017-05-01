@@ -105,6 +105,7 @@ function init(collection){
     
     d3.select("#load-data").style("visibility","hidden").style("display", "none");
     d3.select("#show-viz").style("display", "block");
+  
     
 	// Parsing data into json format
 	collection.forEach(function(d){
