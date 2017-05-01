@@ -13,8 +13,8 @@
   }
   
   textarea{
-    height:200px; 
-    width:200px;
+    height:200px !important; 
+    width:200px !important;
   }
   
 }
@@ -32,8 +32,8 @@
   }
   
   textarea{
-    height:300px; 
-    width:400px;
+    height:300px !important; 
+    width:300px !important;
   }
 }
 

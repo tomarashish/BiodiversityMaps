@@ -222,7 +222,6 @@ function init(collection){
 		)
 	} // end of update 
        
-	*/
 	/*
 	function doImage(err, canvas) {
             var img = document.createElement('img');
@@ -245,7 +244,7 @@ function init(collection){
 	var center = [39.4, -78];
 
 	*/
-	/*
+	
 	// hexabin markers
 	var options = {
     radius : 12,
@@ -264,14 +263,15 @@ function init(collection){
 	var hexLayer = L.hexbinLayer(options).addTo(map)
 		hexLayer.colorScale().range(['blue', 'blue']);
 	hexLayer.data(cordinates)
-	*/
 	
+	
+    /*
 	//heatmap 
 
    addressPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "1500"] ; });
 
 	var heat = L.heatLayer(addressPoints, {radius: 15}).addTo(map);
-
+    */
 } // end of init
 
 
