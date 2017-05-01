@@ -12,6 +12,10 @@
     font-size: 15px !important;
   }
   
+  h3{
+    font-size: 15px !important; 
+  }
+  
   textarea{
     height:200px !important; 
     width:200px !important;
@@ -28,7 +32,11 @@
     word-wrap: break-word;
   }
   .inner p {
-    font-size: 18px !important;
+    font-size: 15px !important;
+  }
+  
+  h3{
+    font-size: 18px !important; 
   }
   
   textarea{
