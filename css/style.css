@@ -11,6 +11,11 @@
     white-space: normal !important;
     word-wrap: break-word;
   }
+  .inner{
+     margin-left: 5%;
+    margin-right: 5%;
+    }
+  
   .inner p {
     font-size: 15px !important;
   }
@@ -55,6 +60,11 @@
     margin-left: 10%;
     margin-right: 10;
   }
+  
+  .inner{
+     margin-left: 10%;
+    margin-right: 10%;
+    }
 }
 
 a {
