@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Tangerine);
 @import url(https://fonts.googleapis.com/css?family=Muli);
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
 @media (max-width: 762px) {
   .btn-responsive {
     padding: 4px 9px !important;
@@ -50,7 +54,7 @@ a {
 }
 
 body {
-  font-family: 'Muli', Arial, sans-serif;
+  font-family: 'Abel', Arial, sans-serif;
   color: #777;
   background-color: rgb(186, 186, 186);
   overflow-x: hidden;
@@ -192,7 +196,7 @@ html {
 .header {
   text-align: center;
   font-size: 20px;
-  font-family: 'Muli', Arial, sans-serif;
+  font-family: 'Abel', Arial, sans-serif;
 }
 
 #show-viz {
@@ -237,7 +241,7 @@ text {
   fill: #FFF;
   pointer-events: none;
   font-size: 13px;
-  font-family: 'Muli', Arial, sans-serif;
+  font-family: 'Abel', Arial, sans-serif;
   font-weight: bold;
 }
 
@@ -274,7 +278,7 @@ text {
   margin: 10px 10px;
   font-size: 25px !important;
   font-weight: bold;
-  font-family: 'Muli', Arial, sans-serif;
+  font-family: 'Abel', Arial, sans-serif;
   padding: 10px 20px;
 }
 
@@ -290,15 +294,16 @@ text {
 /*custome style on navbar li */
 
 .navbar .navbar-nav>li>a {
-  /*color: #777;*/
+ /*color: #777;*/
   color: #9a9a9a;
   color: #fff;
   /*font-weight: 600;*/
-  right: 0px;
-  font-size: 20px;
+  right: 30px !important;
+  font-family: 'Abel', sans-serif;
+  font-size: 22px;
   line-height: 1.42857;
   margin: 10px 20px;
-  padding: 10px 10px;
+  padding: 5px 10px;
 }
 
 
@@ -336,14 +341,15 @@ text {
 */
 
 .footer {
-  font-size: 18px;
-  font-family: 'Muli', Arial, sans-serif;
-  color: white !important;
+  font-weight: bolder;
+  font-size: 20px;
+  font-family: 'Abel', Arial, sans-serif;
   position: absolute;
   bottom: 0px;
   width: 100%;
-  padding-top: 20px;
-  background-color: black;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  background-color: #e8dddd;
 }
 
 .parallex-img1,
@@ -362,7 +368,7 @@ text {
 }
 
 .parallex-img2 {
-  background-image: url("../data/images/parallex2.png");
+  background-image: url("../data/images/parallex1.png");
   min-height: 300px;
 }
 
@@ -385,7 +391,7 @@ text {
 }
 
 .inner header {
-  font-family: 'Muli', Arial, sans-serif;
+  font-family: 'Abel', Arial, sans-serif;
   display: inline-block;
   border-bottom: solid 4px;
   border-top: solid 4px;
@@ -395,12 +401,12 @@ text {
 }
 
 .inner p {
-  font-size: 22px;
-  font-family: 'Muli', Arial, sans-serif;
+  font-size: 25px;
+  font-family: 'Abel', sans-serif;
 }
 
 .caption {
-  font-family: 'Muli', Arial, sans-serif;
+  font-family: 'Abel', Arial, sans-serif;
   margin-top: 50px;
   margin-bottom: 20px;
   text-align: center;
@@ -420,9 +426,9 @@ text {
   width: 50% !important;
   border: solid 4px;
   color: #000;
-  padding: 20px;
-  font-size: 15px;
-  font-weight: bolder;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold !important;
   letter-spacing: 2px;
 }
 
@@ -434,4 +440,11 @@ textarea{
 #map{
   width: 100%; 
   height: 750px;
+}
+
+#dataUpload, #about, #contact
+center{
+  font-weight: bold;
+  font-size: 30px;  
+  font-family: 'Abel', Arial, sans-serif";
 }

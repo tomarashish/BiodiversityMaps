@@ -7,6 +7,7 @@
 // icons for markers
 //https://www.iconfinder.com/icons/1110928/beetle_bug_fly_insect_insects_pest_icon#size=128
 //http://www.flaticon.com/free-icons/insect_223
+//http://tombatossals.github.io/angular-leaflet-directive/examples/0000-viewer.html#/basic/legend-example
 
 //Input file name display
 $("input[id='upload_file']").change(function (e) {
@@ -131,6 +132,11 @@ function init(collection){
 			attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 			});
 		
+        tile5 =   L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
+						attribution: 'Tiles &copy; Esri &mdash; Source: USGS, Esri, TANA, DeLorme, and NPS'
+						});
+		
+  
 	L_PREFER_CANVAS = true;
 	
     var map = L.map( 'map', {
@@ -149,7 +155,8 @@ function init(collection){
 		  "<div class='layer-titles'> OSM Landscape </div>": tile1,
 		   "<div class='layer-titles'> Terrain </div>": tile2,
 		  "<div class='layer-titles'> ESRI World Canvas </div>":tile3,
-		  "<div class='layer-titles'> Stamen Toner Lite </div>":tile4
+		  "<div class='layer-titles'> Stamen Toner Lite </div>":tile4,
+          "<div class='layer-titles'> world terrain</div>":tile5
 		};
 		
 	L.control.layers(layerControlItems).addTo(map);
@@ -183,10 +190,10 @@ function init(collection){
 						   
     /* Initialize the SVG layer */
 	//L.svg().addTo(map); // witth new leaflet version
-   //map._initPathRoot()    
+    map._initPathRoot()    
     
 	/* We simply pick up the SVG from the map object */
-	/*var svg = d3.select("#map").select("svg"),
+	var svg = d3.select("#map").select("svg"),
 	g = svg.append("g");
 
 	collection.forEach(function(d) {
@@ -222,7 +229,7 @@ function init(collection){
 		)
 	} // end of update 
        
-	/*
+	
 	function doImage(err, canvas) {
             var img = document.createElement('img');
             var dimensions = map.getSize();
@@ -239,45 +246,46 @@ function init(collection){
             leafletImage(map, doImage);
         });
 	
+	//var center = [39.4, -78];
 
-	
-	var center = [39.4, -78];
-
-	*/
-	
 	// hexabin markers
-	var options = {
-    radius : 12,
-	lng: function(d){
-        return d[1];
-    	},
-    lat: function(d){
-        return d[0];
-    	},
-    opacity: 0.5,
-    duration: 500
-};
+    function heaxabin(){
+    
+        var options = {
+        radius : 12,
+	   lng: function(d){
+          return d[1];
+          },
+        lat: function(d){
+          return d[0];
+    	 },
+        opacity: 0.5,
+        duration: 500
+        };
 	
-	var cordinates = collection.map(function(d){ return [d.coordinates[0], d.coordinates[1]]; })
+	   var cordinates = collection.map(function(d){ return [d.coordinates[0], d.coordinates[1]]; })
 	
-	var hexLayer = L.hexbinLayer(options).addTo(map)
+	   var hexLayer = L.hexbinLayer(options).addTo(map)
 		hexLayer.colorScale().range(['blue', 'blue']);
-	hexLayer.data(cordinates)
-	
-	
-    /*
-	//heatmap 
-
-   addressPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "1500"] ; });
-
-	var heat = L.heatLayer(addressPoints, {radius: 15}).addTo(map);
-    */
+        hexLayer.data(cordinates)
+    }
+    
+  
+    //heatmap   
+    function heatmap(){
+      
+      addressPoints = collection.map(function (d) { return [d.coordinates[0], d.coordinates[1], "1500"] ; });
+      var heat = L.heatLayer(addressPoints, {radius: 15}).addTo(map);
+    }
+  
 } // end of init
 
 
 /**
  * Listen to scroll to change header opacity class
  */
+
+/*
 function checkScroll(){
     var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
 
@@ -293,3 +301,4 @@ if($('.navbar').length > 0){
         checkScroll();
     });
 }
+*/
