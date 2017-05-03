@@ -21,6 +21,14 @@
     height: 200px !important;
     width: 200px !important;
   }
+  
+  #help {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
 }
 
 @media (min-width: 760px) and (max-width: 992px) {
@@ -40,6 +48,12 @@
   textarea {
     height: 300px !important;
     width: 300px !important;
+  }
+  #help {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10;
   }
 }
 
@@ -448,5 +462,7 @@ textarea {
 #help {
   font-size: 25px;
   font-family: 'Abel', Arial, sans-serif;
-  margin: 100px 400px;
+  margin-top: 100px;
+  margin-left: 25%;
+  margin-right: 25%;
 }
