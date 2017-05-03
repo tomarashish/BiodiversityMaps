@@ -250,7 +250,7 @@
 		.record-list li:hover{
 			cursor:auto;
 			color:white;
-			opacity:1; important
+			opacity:1; !important
 		}
 		
 		ul li span:first-of-type { 

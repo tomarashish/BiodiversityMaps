@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Abel');
-
 @media (max-width: 762px) {
   .btn-responsive {
     padding: 4px 9px !important;
@@ -15,16 +14,13 @@
   .inner p {
     font-size: 15px !important;
   }
-  
-  h3{
-    font-size: 15px !important; 
+  h3 {
+    font-size: 15px !important;
   }
-  
-  textarea{
-    height:200px !important; 
-    width:200px !important;
+  textarea {
+    height: 200px !important;
+    width: 200px !important;
   }
-  
 }
 
 @media (min-width: 760px) and (max-width: 992px) {
@@ -38,14 +34,12 @@
   .inner p {
     font-size: 15px !important;
   }
-  
-  h3{
-    font-size: 18px !important; 
+  h3 {
+    font-size: 18px !important;
   }
-  
-  textarea{
-    height:300px !important; 
-    width:300px !important;
+  textarea {
+    height: 300px !important;
+    width: 300px !important;
   }
 }
 
@@ -294,7 +288,7 @@ text {
 /*custome style on navbar li */
 
 .navbar .navbar-nav>li>a {
- /*color: #777;*/
+  /*color: #777;*/
   color: #9a9a9a;
   color: #fff;
   /*font-weight: 600;*/
@@ -432,19 +426,27 @@ text {
   letter-spacing: 2px;
 }
 
-textarea{
-  height:500px; 
-  width:600px;
+textarea {
+  height: 500px;
+  width: 600px;
 }
 
-#map{
-  width: 100%; 
+#map {
+  width: 100%;
   height: 750px;
 }
 
-#dataUpload, #about, #contact
-center{
+#dataUpload,
+#about,
+#contact center {
   font-weight: bold;
-  font-size: 30px;  
+  font-size: 30px;
   font-family: 'Abel', Arial, sans-serif";
+
+}
+
+#help {
+  font-size: 25px;
+  font-family: 'Abel', Arial, sans-serif;
+  margin: 100px 400px;
 }
