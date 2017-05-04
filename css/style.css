@@ -448,6 +448,10 @@ text {
   font-weight: bold !important;
   letter-spacing: 2px;
 }
+center{
+  font-size: 30px; 
+  font-family: 'Abel', Arial, sans-serif !important;
+}
 
 textarea {
   height: 500px;
@@ -459,15 +463,27 @@ textarea {
   height: 750px;
 }
 
-#dataUpload,
-#about,
-#contact center {
-  font-weight: bold;
-  font-size: 30px;
-  font-family: 'Abel', Arial, sans-serif";
-
+#dataUpload center{
+  font-weight: 600;
+  font-size: 30px !important;
+  
 }
 
+#about{
+  font-size: 30px; 
+  font-weight: bold;
+  font-family: 'Abel', Arial, sans-serif !important;
+  margin-top: 5px; 
+  padding-bottom:10px;
+}
+
+#contact{
+  font-size: 30px; 
+  font-weight: bold;
+  font-family: 'Abel', Arial, sans-serif !important;
+  margin-top: 50px; 
+  padding-bottom:100px;
+}
 #help {
   font-size: 25px;
   font-family: 'Abel', Arial, sans-serif;
