@@ -394,6 +394,16 @@ text {
   min-height: 300px;
 }
 
+.parallex-img4 {
+  background-image: url("../data/images/parallex2.png");
+  min-height: 400px;
+  padding-top: 200px;
+}
+
+.parallex-img4 center h2{
+  font-weight: bold;
+}
+
 .inner {
   position: absolute;
   left: 0;
